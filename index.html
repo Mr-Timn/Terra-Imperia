@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Ultimate Sprite Fight</title>
+		<link rel="stylesheet" href="Stylesheets/index.css">
+		<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+		<script id="" src="Javascript/index.js"></script>
+	</head>
+	<body>
+		<div class="heading">
+			<div class="tab">
+				<img src="http://imgur.com/53Pteak.png">
+				<h2 id="fps">FPS: 0</h2>
+			</div>
+		</div>
+		<div id="container">
+			<div class="gameCanvas"><canvas class="game" id="game"></canvas></div>
+			<div id="scripts">
+				<script id="FPS">var fps = 0; setInterval(function(){ document.getElementById('fps').innerHTML = "FPS: " + fps; fps = 0; },1000); </script>
+				<script id="loadScripts" src="Javascript/LoadGameJSFiles.js"></script>
+			</div>
+		</div>
+		<div id="footer">
+			<p>&copy;Optimum Gaming</p>
+		</div>
+		<div id="PreloadImages"></div>
+	</body>
+</html>

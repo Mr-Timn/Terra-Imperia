@@ -1,0 +1,61 @@
+@font-face{
+	font-family: "One Piece";
+	src: url("Fonts/one_piece_font.eot?") format("eot"),
+		url("Fonts/one_piece_font.woff") format("woff"),
+		url("Fonts/one_piece_font.ttf") format("truetype"),
+		url("Fonts/one_piece_font.svg#ONEPIECE") format("svg");
+}
+
+body{
+	text-align: center;
+	
+	background-image: url("http://i.imgur.com/Vl1a5fR.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+    background-size: 100% 100%;
+}
+
+#container{ 
+	
+}
+#container #help{ 
+	width: 1300px; 
+	margin: auto; 
+}
+#container #help #helpBDiv{ 
+	
+}
+#container #help #helpBText{ 
+	width:1100px; 
+	height:15px; 
+	margin:auto; 
+}
+#container #help #helpBText p{ 
+	font-size: 13px; 
+	margin: 2px; 
+}
+#container #help #helpBText #player1{ 
+	border: 1px; 
+	float: left; 
+	margin-top: 10px; 
+}
+#container #help #helpBText #player2{ 
+	border: 1px; 
+	float:right; 
+	margin-top: 10px; 
+}
+
+#background img{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+}
+
+.game{
+	
+	border:1px solid #000;
+	margin: auto;
+	/*transform: translate(10%, 0%) ; */
+}

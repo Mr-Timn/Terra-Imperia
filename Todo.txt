@@ -1,0 +1,12 @@
+
+Create Characters:
+	- Franky
+	- Enel
+	- Ace
+
+
+Adjust frame speed relative to fps
+
+Create relative screen size and position 
+
+Script CharacterSelect:

@@ -1,0 +1,149 @@
+
+****Players ******************************************************************************************
+	new Player(
+		NAME, ------------------------------------------------------------ String: Player Name
+		X, --------------------------------------------------------------- Number: Starting x position
+		Y, --------------------------------------------------------------- Number: Starting y position
+		WIDTH, ----------------------------------------------------------- Number: Player width
+		HEIGHT, ---------------------------------------------------------- Number: Player height
+		SPEED, ----------------------------------------------------------- Number: Player speed, recommended 3-5
+		COLOR ------------------------------------------------------------ String: Prefered box color if character or animation is undefined
+		GROUND, ---------------------------------------------------------- Number: Ground for player -- 'height' or 'canvasHeight' are bottom of screen 
+		FRICTION, -------------------------------------------------------- Number: Slow down velocity X -- 1 for no friction, 0 to stop movement
+		GRAVITY, --------------------------------------------------------- Number: Slow down velocity Y -- 0 for no gravity
+		JUMPPOWER, ------------------------------------------------------- Number: Set veloctiy Y to jump 
+		HEALTH, ---------------------------------------------------------- Number: Starting Health 
+		MAXHEALTH, ------------------------------------------------------- Number: Max health for character
+		HEALTHPOS, ------------------------------------------------------- Array Numbers: Position for player health --  X: 1 for left, 2 for right -- Y: 0 for top of screen
+			[X,Y]
+		STARTANIMATION, -------------------------------------------------- String: Starting player animation
+		STARTDIRECTION, -------------------------------------------------- String: Starting player direction -- right or left
+		MKEYS, ----------------------------------------------------------- Array Numbers/Strings: Player movement and attack keys -- all numbers or letters 
+			[
+			UpKey,
+			DownKey,
+			LeftKey,
+			RightKey,
+			JumpKey,
+			LightAttackKey,
+			HeavyAttackKey,
+			SpecialAttackKey
+			]
+		USEKEYCODE, ------------------------------------------------------ Boolean: True if using numbers for mKeys
+		CHARACTER, ------------------------------------------------------- String: Character that player will play as
+		ISAI ------------------------------------------------------------- Boolean: True if player is an AI
+	)
+	
+	Creating Character File:
+		Create animation variables
+			var [CHARACTER][ANIMATION] = { 
+				src: , --------------------------------------------------- String: Directory to folder with animation -- file must include R and L folders -- animation names must be numbers starting at 0 to 
+				frames: , ------------------------------------------------ Number: Number of frames the animation has - 1, or number of last frame
+				height: , ------------------------------------------------ Number: Height of the tallest frame in animation
+				speed: , ------------------------------------------------- Number: Speed animation will tick in miliseconds
+						If attack animation include: 
+				damage: , ------------------------------------------------ Number: Amount of damage attack will deal
+				push: ---------------------------------------------------- Array: Strength of push if attack lands
+					[
+					X, --------------------------------------------------- Number: Horizontal push if attack lands
+					Y ---------------------------------------------------- Number: Y: vertical push, > 0 for upward, < 0 downward
+					], 
+				isCombo: ------------------------------------------------- Boolean: True if attack is a combo -- not required for non combo attacks
+				isSpecal: ------------------------------------------------ Boolean: True if attack is a special -- not required for non special attacks
+				reset: --------------------------------------------------- Boolean: True if attack should reset combo 
+			}
+		Create particles and projetile variables
+			var [CHARACTER][PARTICLE] = {
+				name: , -------------------------------------------------- String: Identifier for particle
+				texture: , ----------------------------------------------- String: Directory to folder with particle animation
+				speed: , ------------------------------------------------- Number: 
+				frames: , ------------------------------------------------ Number: 
+				height: , ------------------------------------------------ Number:
+				lifetime: , ---------------------------------------------- Number: 
+				delay: , ------------------------------------------------- Number: 
+				loop: ---------------------------------------------------- Array:
+					[
+					active , --------------------------------------------- Boolean:
+					loop: , ---------------------------------------------- Number:
+					max: ------------------------------------------------- Number: 
+					],
+				damage: { ------------------------------------------------ Object: 
+					active: , -------------------------------------------- Boolean:
+					value: , --------------------------------------------- Number:
+					stun: , ---------------------------------------------- Boolean: 
+					reset: ----------------------------------------------- Number: 
+				},
+				projectile: { -------------------------------------------- Object:
+					active: , -------------------------------------------- Boolean:
+					direction: , ----------------------------------------- String: 
+					moveTo: ---------------------------------------------- Array:
+						[
+						X, ----------------------------------------------- Number:
+						Y ------------------------------------------------ Number:
+						],
+					speed: , --------------------------------------------- Number:
+					ohHit: {
+						active: , ---------------------------------------- Boolean:
+						texture: , --------------------------------------- String: 
+						frames: , ---------------------------------------- Number:
+						speed: , ----------------------------------------- Number:
+						height: , ---------------------------------------- Number:
+						lifetime: , -------------------------------------- Number:
+						delay: , ----------------------------------------- Number:
+						effect: ------------------------------------------ Array:
+							[
+							active: , ------------------------------------ Boolean:
+							func:
+								function(ppl){} -------------------------- Function: 
+							]
+					}
+				}
+			}
+****Buttons *****************************************************************************************
+		new Button(
+			NAME, 
+			X,
+			Y,
+			WIDTH,
+			HEIGHT,
+			COLOR,
+			TEXT,
+			SLIDEOBJ,
+				[
+					X,
+					Y,
+					Tick,
+					DelayTime
+				]
+			TEXTOBJ,
+				[
+					Font Size,
+					Font Family,
+					Text Color
+				]
+			IMAGE,
+			BUTTONFUNCTION
+				function(){
+					Code;
+				}
+		)
+****Text ********************************************************************************************
+		new MenuText(
+			Name,
+			X,
+			Y,
+			Width,
+			Height,
+			Text,
+			TextObj	
+				[
+					Font Size,
+					Font Family,
+					Text Color
+				]
+		)
+		
+		
+		
+		
+		
